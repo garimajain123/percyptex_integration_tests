@@ -9,7 +9,7 @@ from splinter import Browser
 from pyvirtualdisplay import Display
 
 browser = None
-headless = False
+headless = True
 
 @before.all
 def open_browser():
