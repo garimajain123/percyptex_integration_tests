@@ -1,8 +1,34 @@
 from features.support.lettuce_env import *
 from features.support.lib.fill_survey_helper import *
+
+'''
 display = Display(visible=0)
 display.start()
 browser = Browser()
+'''
+browser = None
+
+@before.each_scenario
+def open_browser(scenario):  
+  global browser
+  browser = Browser()
+  browser.driver.set_window_size(1400, 800)
+
+@after.each_scenario
+def close_browser(scenario):
+  browser.quit()
+
+@after.each_scenario
+def capture_screenshot(scenario):
+    for step in scenario.steps:
+        if step.failed:
+            now = datetime.datetime.now().strftime('%Y-%m-%d_%H-%M-%S-%f')
+            error_screenshots_path = os.path.join(application_path,'error_screenshots')
+            browser.driver.get_screenshot_as_file(error_screenshots_path+'/%s%s.png' %(step.sentence, now))
+            print "Snapshot is taken"
+            print "#===========================================================#"
+            print step.sentence + ' step failed'
+            print "#===========================================================#"
 
 def fetch_urls():
     urls = os.path.join(application_path,'features/fixtures/urls.yml')
