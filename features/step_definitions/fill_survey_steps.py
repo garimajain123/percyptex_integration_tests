@@ -1,6 +1,19 @@
 from features.support.lettuce_env import *
 from features.support.lib.fill_survey_helper import *
+display = Display(visible=0)
+display.start()
 browser = Browser()
+
+def fetch_urls():
+    urls = os.path.join(application_path,'features/fixtures/urls.yml')
+    open_yaml = open(urls,'r')
+    url_dict = yaml.load(open_yaml)
+    return url_dict
+
+def fill_survey_form(range, id_count):
+    for i in xrange(range):
+      browser.find_by_id("Q0%s_0%s_e1"%(id_count, i)).click()
+      browser.find_by_id("Q0%s_0%s_i1"%(id_count, i )).click()
   
 @step('I am filling survey')
 def visit_survey_url(step):

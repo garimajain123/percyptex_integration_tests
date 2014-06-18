@@ -10,6 +10,7 @@ from pyvirtualdisplay import Display
 browser = None
 headless = True
 
+'''
 @before.all
 def open_browser():
     if headless:
@@ -28,6 +29,7 @@ def open_browser():
 def close_browser(scenario):
     browser.quit()
 
+
 @after.each_scenario
 def capture_screenshot(scenario):
     for step in scenario.steps:
@@ -43,3 +45,4 @@ def capture_screenshot(scenario):
 def get_browser():
     print browser
     return browser
+'''
