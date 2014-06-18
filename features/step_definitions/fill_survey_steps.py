@@ -9,7 +9,9 @@ browser = Browser()
 browser = None
 
 @before.each_scenario
-def open_browser(scenario):  
+def open_browser(scenario):
+  display = Display(visible=0)
+  display.start()
   global browser
   browser = Browser()
   browser.driver.set_window_size(1400, 800)
