@@ -48,7 +48,17 @@ Scenario: I can check gap report
           And the Weighted Gap Trend Score for question 4 is "-3.45"
           Now I go to "Logout"
 
-Scenario: I can check gap report for China
-          And I click on the "Filter Data" link
-
-
+@wip
+ Scenario: I can check gap report for China
+         Given I click on the "Filter Data" link
+         And I applied a filter on Country "China"
+         And I submit the filter data
+         And the filter count is "71"
+         And I am on the "Gap" report page
+         And there is both "Questions" and "Categories" tab in top left corner
+         And there is both "No Comparison" and "Compared to:" tab in top right corner
+         When I am on the "Questions" tab
+         Then the Evaluation Score for question 3 is "3.92"
+         And the Importance Score for question 3 is "4.13"
+         And the Gap Score for question 3 is "0.21"
+         And the Weighted Gap Score for question 3 is "4.34"
