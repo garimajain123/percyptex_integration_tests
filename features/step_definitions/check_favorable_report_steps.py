@@ -23,7 +23,8 @@ def verify_left_corner_tabs(step, tab1, tab2):
 @step('there is a "([^"]*)" and "([^"]*)" tab in top right corner')
 def verify_right_corner_tabs(step, tab1, tab2):
 		for id_count, tab in enumerate([tab1, tab2]):
-				assert get_browser().find_by_id("ui-id-%s"%(id_count+1)).text == tab
+			assert get_browser().find_by_id("ui-id-1").text == tab1
+			assert get_browser().find_by_id("ui-id-3").text == tab2
 
 @step('I am on the "Questions" tab')
 def login_to_perceptyx(step):
@@ -59,7 +60,7 @@ def click_categories_tab(step):
 
 @step('I go into the "Compared to 2011 Trend" tab')
 def click_comparison_tab(step):
-		get_browser().find_by_id('ui-id-2').click()
+		get_browser().find_by_id('ui-id-3').click()
 
 @step('the Fav score for Clarity of Direction is "([^"]*)"')
 def verify_fav_score_for_category(step, fav_score):

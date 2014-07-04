@@ -1,3 +1,4 @@
 urls:
   survey_url: 'https://newdev.perceptyx.com/demox/dc/?theme=pinstripe'
   perceptyx_url: 'https://www.perceptyx.com/qa2/index.cgi'
+  gap_report_url: 'https://www.perceptyx.com/qa2/index.cgi?rm=gap_report'
