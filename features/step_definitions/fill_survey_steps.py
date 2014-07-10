@@ -23,7 +23,7 @@ def verify_employee_survey_page(step, page):
 
 @step('I started filling 1st page of the survey')
 def fill_survey_first_page(step):
-    assert get_browser().is_text_present('Employee Surgarimavey')
+    assert get_browser().is_text_present('Employee Surgarimvey')
     fill_survey_form(10, 0)
 
 @step('I fill the 2nd page')
