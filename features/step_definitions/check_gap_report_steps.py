@@ -245,7 +245,7 @@ def click_on_logout(step):
 @step('I go to filter pop-up')
 def click_on_filter_data(step):
     get_browser().find_by_css(".menuitem.topitem .menulink").click()
-    time.sleep(30) #TODO Need to make a proper function for checking element in time intervals
+    time.sleep(10) #TODO Need to make a proper function for checking element in time intervals
     assert get_browser().find_by_css(".menuitem.topitem .level1.one_col.icons .first .new_segment").text == 'New Filter'
     get_browser().find_by_css(".menuitem.topitem .level1.one_col.icons .first .new_segment").click()
     assert get_browser().is_element_present_by_css('.ui-dialog-content.ui-widget-content')
@@ -345,7 +345,7 @@ def verify_weighted_gap_score_for_question5(step, compared_type):
     get_browser().select("compared_to", value)
     time.sleep(10)
     get_browser().select("compared_to", value)
-
+    time.sleep(10)
 
 @step('the Evaluation Score for question 6 to compare trend is "([^"]*)"')
 def the_evaluation_score_for_question6_to_compare_trend_is(step, evaluation_score):
