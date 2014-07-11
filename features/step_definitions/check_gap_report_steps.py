@@ -344,6 +344,8 @@ def verify_weighted_gap_score_for_question5(step, compared_type):
         value = "https://www.perceptyx.com/qa2/index.cgi?rm=gap_report&ps=1&cmp=%s"%compared_type
     get_browser().select("compared_to", value)
     time.sleep(10)
+    get_browser().select("compared_to", value)
+
 
 @step('the Evaluation Score for question 6 to compare trend is "([^"]*)"')
 def the_evaluation_score_for_question6_to_compare_trend_is(step, evaluation_score):
