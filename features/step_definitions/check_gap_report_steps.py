@@ -245,7 +245,7 @@ def click_on_logout(step):
 @step('I go to filter pop-up')
 def click_on_filter_data(step):
     get_browser().find_by_css(".menuitem.topitem .menulink").click()
-    time.sleep(2) #TODO Need to make a proper function for checking element in time intervals
+    time.sleep(10) #TODO Need to make a proper function for checking element in time intervals
     assert get_browser().find_by_css(".menuitem.topitem .level1.one_col.icons .first .new_segment").text == 'New Filter'
     get_browser().find_by_css(".menuitem.topitem .level1.one_col.icons .first .new_segment").click()
     assert get_browser().is_element_present_by_css('.ui-dialog-content.ui-widget-content')

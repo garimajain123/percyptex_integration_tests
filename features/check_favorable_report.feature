@@ -24,6 +24,7 @@ Scenario: I can check favorable report
           Then the Trend Fav score for Clarity of Direction is "65.0%"
           And the Trend Neutral score for Clarity of Direction is "20.9%"
           And the Trend Unfav score for Clarity of Direction is "14.1%"
+          Now I go to "Logout"
 
 
         

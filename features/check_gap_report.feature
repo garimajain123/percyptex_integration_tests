@@ -48,7 +48,6 @@ Scenario: I can check gap report
           And the Weighted Gap Trend Score for question 4 is "-3.45"
           Now I go to "Logout"
 
-@wip
   Scenario: I can check gap report for China
            Given I go to filter pop-up
            And I applied a filter on Country "China"
@@ -132,3 +131,4 @@ Scenario: I can check gap report
            And the Gap Trend Score for Work Life Balance to compare organization is "-0.65"
            And the Weighted Gap Score for Work Life Balance to compare organization is "3.86"
            And the Weighted Gap Trend Score for Work Life Balance to compare organization is "-14.77"
+           Now I go to "Logout"
