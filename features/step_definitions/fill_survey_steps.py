@@ -16,8 +16,8 @@ def select_language(step, language):
 def click_submit_button(step, button):
     get_browser().find_by_name('submit').click()
 
-@step('I am on the "([^"]*)" page')
-def verify_employee_survey_page(step, page):
+@step('I am on the "Employee Survey" page')
+def verify_employee_survey_page(step):
     assert get_browser().is_text_present('Welcome to the Sample Employee Survey!')
     get_browser().find_by_name('Submit').click()
 
