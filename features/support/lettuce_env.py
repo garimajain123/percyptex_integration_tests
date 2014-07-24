@@ -33,7 +33,8 @@ def capture_screenshot(scenario):
         if step.failed:
             now = datetime.datetime.now().strftime('%Y-%m-%d_%H-%M-%S-%f')
             error_screenshots_path = os.path.join(application_path,'error_screenshots')
-            get_browser().driver.get_screenshot_as_file(error_screenshots_path+'/%s%s.png' %(step.sentence, now))
+            sentence = step.sentence.replace('\"', "").replace("\'","")
+            get_browser().driver.get_screenshot_as_file(error_screenshots_path+'/%s%s.png' %(sentence, now))
             print "Snapshot is taken"
             print "#===========================================================#"
             print step.sentence + ' step failed'
