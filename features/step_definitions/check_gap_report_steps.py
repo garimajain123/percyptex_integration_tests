@@ -349,12 +349,19 @@ def verify_weighted_gap_score_for_question5(step, compared_type):
 
 @step('the Evaluation Score for question 6 to compare trend is "([^"]*)"')
 def the_evaluation_score_for_question6_to_compare_trend_is(step, evaluation_score):
-    time.sleep(5)
-    assert  get_calculate_value_for_questions_and_comparision("07", 16) == evaluation_score
+    if get_calculate_value_for_questions_and_comparision("07", 4) == evaluation_score:
+      assert  get_calculate_value_for_questions_and_comparision("07", 4) == evaluation_score
+    elif get_calculate_value_for_questions_and_comparision("07", 8) == evaluation_score:
+      assert  get_calculate_value_for_questions_and_comparision("07", 8) == evaluation_score
+    else:
+      assert  get_calculate_value_for_questions_and_comparision("07", 16) == evaluation_score
 
 @step('the Evaluation Trend Score for question 6 to compare trend is "([^"]*)"')
 def the_evaluation_trend_score_for_question6_to_compare_trend_is(step, evaluation_trend_score):
-    assert get_evaluation_score_text_for_questions_and_comparision("07", 4) == evaluation_trend_score
+    if get_evaluation_score_text_for_questions_and_comparision("07", 2) == evaluation_trend_score:
+      assert get_evaluation_score_text_for_questions_and_comparision("07", 2) == evaluation_trend_score
+    else:
+      assert get_evaluation_score_text_for_questions_and_comparision("07", 4) == evaluation_trend_score
 
 @step('the Importance Score for question 6 to compare trend is "([^"]*)"')
 def the_important_score_for_question6_to_compare_trend_is(step, important_score):
