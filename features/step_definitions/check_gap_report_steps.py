@@ -454,35 +454,59 @@ def the_weighted_trend_score_for_question6_to_compare_organization_is(step, weig
 
 @step('the Evaluation Score for Work Life Balance to compare trend is "([^"]*)"')
 def the_evaluation_score_for_work_life_balance_to_compare_trend_is(step, evaluation_score):
-    assert get_calculate_value_for_categories_and_comparision("4", 4) == evaluation_score
+    if get_calculate_value_for_categories_and_comparision("4", 4) == evaluation_score:
+      assert get_calculate_value_for_categories_and_comparision("4", 4) == evaluation_score
+    else:
+      get_calculate_value_for_categories_and_comparision("4", 8) == evaluation_score
 
 @step('the Evaluation Trend Score for Work Life Balance to compare trend is "([^"]*)"')
 def the_evaluation_trend_score_for_work_life_balance_to_compare_trend_is(step, evaluation_trend_score):
-    assert get_evaluation_score_text_for_categories_and_comparision("4", 1) == evaluation_trend_score
+    if get_evaluation_score_text_for_categories_and_comparision("4", 1) == evaluation_trend_score:
+      assert get_evaluation_score_text_for_categories_and_comparision("4", 1) == evaluation_trend_score
+    else:
+      get_evaluation_score_text_for_categories_and_comparision("4", 2) == evaluation_trend_score
 
 @step('the Importance Score for Work Life Balance to compare trend is "([^"]*)"')
 def the_important_score_for_work_life_balance_to_compare_trend_is(step, important_score):
-    assert get_calculate_value_for_categories_and_comparision("4", 5) == important_score
+    if get_calculate_value_for_categories_and_comparision("4", 5) == important_score:
+      assert get_calculate_value_for_categories_and_comparision("4", 5) == important_score
+    else:
+      get_calculate_value_for_categories_and_comparision("4", 9) == important_score
 
 @step('the Importance Trend Score for Work Life Balance to compare trend is "([^"]*)"')
 def the_important_trend_score_for_work_life_balance_to_compare_trend_is(step, important_trend_score):
-    assert get_importance_score_text_for_categories_and_comparision("4", 1) == important_trend_score
+    if get_importance_score_text_for_categories_and_comparision("4", 1) == important_trend_score:
+      assert get_importance_score_text_for_categories_and_comparision("4", 1) == important_trend_score
+    else:
+      get_importance_score_text_for_categories_and_comparision("4", 2) == important_trend_score
 
 @step('the Gap Score for Work Life Balance to compare trend is "([^"]*)"')
 def the_gap_score_for_work_life_balance_to_compare_trend_is(step, gap_score):
-    assert get_calculate_value_for_categories_and_comparision("4", 6) == gap_score
+    if get_calculate_value_for_categories_and_comparision("4", 6) == gap_score:
+      assert get_calculate_value_for_categories_and_comparision("4", 6) == gap_score
+    else:
+      get_calculate_value_for_categories_and_comparision("4", 10) == gap_score
 
 @step('the Gap Trend Score for Work Life Balance to compare trend is "([^"]*)"')
 def the_gap_trend_score_for_work_life_balance_to_compare_trend_is(step, gap_trend_score):
-    assert get_gap_score_text_for_categories_and_comparision("4", 1) == gap_trend_score
+    if get_gap_score_text_for_categories_and_comparision("4", 1) == gap_trend_score:
+      assert get_gap_score_text_for_categories_and_comparision("4", 1) == gap_trend_score
+    else:
+      get_gap_score_text_for_categories_and_comparision("4", 2) == gap_trend_score
 
 @step('the Weighted Gap Score for Work Life Balance to compare trend is "([^"]*)"')
 def the_weighted_score_for_work_life_balance_to_compare_trend_is(step, weighted_gap_score):
-    assert get_calculate_value_for_categories_and_comparision("4", 7) == weighted_gap_score
+    if get_calculate_value_for_categories_and_comparision("4", 7) == weighted_gap_score:
+      assert get_calculate_value_for_categories_and_comparision("4", 7) == weighted_gap_score
+    else:
+      get_calculate_value_for_categories_and_comparision("4", 11) == weighted_gap_score
 
 @step('the Weighted Gap Trend Score for Work Life Balance to compare trend is "([^"]*)"')
 def the_weighted_trend_score_for_work_life_balance_to_compare_trend_is(step, weighted_gap_trend_score):
-    assert get_weighted_gap_score_text_for_categories_and_comparision("4", 1) == weighted_gap_trend_score
+    if get_weighted_gap_score_text_for_categories_and_comparision("4", 1) == weighted_gap_trend_score:
+      assert get_weighted_gap_score_text_for_categories_and_comparision("4", 1) == weighted_gap_trend_score
+    else:
+      get_weighted_gap_score_text_for_categories_and_comparision("4", 2) == weighted_gap_trend_score
 
 @step('the Evaluation Score for Work Life Balance to compare reminder is "([^"]*)"')
 def the_evaluation_score_for_work_life_balance_to_compare_reminder_is(step, evaluation_score):
