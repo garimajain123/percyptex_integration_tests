@@ -56,7 +56,7 @@ def verify_unfav_score_average(step, unfav_score_average):
 
 @step('I go into the "Categories" tab')
 def click_categories_tab(step):
-    get_browser().find_link_by_text('Categories').click()
+    get_browser().find_link_by_text('Categories').last.click()
 
 @step('I go into the "Compared to 2011 Trend" tab')
 def click_comparison_tab(step):

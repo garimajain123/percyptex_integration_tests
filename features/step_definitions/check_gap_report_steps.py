@@ -61,16 +61,18 @@ def get_importance_score_text_for_categories_and_comparision(id_number, index):
 def login_to_perceptyx(step):
     login('test1', 'user1')
 
-@step('I click on "Gap Report" link')
-def click_link(step):
-		link = fetch_urls()['urls']['gap_report_url']
-		assert get_browser().find_link_by_href(link)
-		get_browser().find_link_by_href(link).click()
+@step('I click on "([^"]*)" report link')
+def click_link(step, url):
+    if url == "Gap Report":
+		  link = fetch_urls()['urls']['gap_report_url']
+    elif url == "Trend Report":
+      link = fetch_urls()['urls']['trend_report_url']
+    assert get_browser().find_link_by_href(link)
+    get_browser().find_link_by_href(link).click()
 
-@step('I am on the "Gap Report" page')
-def verify_right_page_to_test(step):
-		assert get_browser().is_text_present("Gap Report")
-		assert 'gap_report' in get_browser().url
+@step('I am on the "([^"]*)" report page')
+def verify_right_page_to_test(step, text):
+		assert get_browser().is_text_present(text)
 
 @step('there is both "([^"]*)" and "([^"]*)" tab in top left corner')
 def verify_left_corner_tabs(step, tab1, tab2):
@@ -254,10 +256,14 @@ def click_on_filter_data(step):
 def apply_country_filter(step):
     get_browser().select("q", "01_02_07")
     time.sleep(3) #TODO Need to make a proper function for checking element in time intervals
-    assert get_browser().is_text_present('Step 2')
-    get_browser().select("q0", "4")
+    assert get_browser().is_element_present_by_css('.ui-autocomplete-input')
+    get_browser().find_by_css(".ui-autocomplete-input").first.fill('China')
+    time.sleep(3)
+    assert get_browser().find_by_css('.ui-multiselect-checkboxes li')[3].text == 'China'
+    get_browser().find_by_css('.ui-multiselect-checkboxes li input')[3].check()
+    assert get_browser().find_by_css('.ui-multiselect-checkboxes li input')[3].checked
     time.sleep(3) #TODO Need to make a proper function for checking element in time intervals
-    assert get_browser().is_text_present('Step 3')
+    
 
 @step('the filter count is "71"')
 def filter_count(step):
@@ -266,10 +272,10 @@ def filter_count(step):
 
 @step('I submit the filter data')
 def submit_filter_data(step):
-    get_browser().find_by_css(".submit_btn").click()
+    get_browser().find_by_css(".submit_btn.ui-button-text-only").first.click()
     
 @step('I am on the "Gap" report page')
-def submit_filter_data(step):
+def on_gap_report_page(step):
     assert get_browser().is_text_present('Gap Report')
 
 @step('the Evaluation Score for question 3 is "([^"]*)"')

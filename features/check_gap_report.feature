@@ -2,8 +2,8 @@ Feature: Check Gap report
 
 Background:
        Given I am logged into perceptyx 
-       And I click on "Gap Report" link
-       Then I am on the "Gap Report" page
+       And I click on "Gap Report" report link
+       Then I am on the "Gap Report" report page
 
 
 Scenario: I can check gap report
@@ -47,6 +47,7 @@ Scenario: I can check gap report
           And the Weighted Gap Score for question 4 is "18.63"
           And the Weighted Gap Trend Score for question 4 is "-3.45"
           Now I go to "Logout"
+
 
   Scenario: I can check gap report for China
            Given I go to filter pop-up
